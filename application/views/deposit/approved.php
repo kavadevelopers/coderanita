@@ -23,7 +23,7 @@
                                 <th class="text-right">Amount</th>
                                 <th>Remarks</th>
                                 <th class="text-center">Deposit Type</th>
-                                <th class="text-center">Deposit Date</th>
+                                <th class="text-center">Deposit request Date</th>
                             </tr>
                         </thead>
                         <tbody>
