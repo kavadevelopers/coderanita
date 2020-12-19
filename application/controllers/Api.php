@@ -24,6 +24,7 @@ class Api extends CI_Controller
 				'file'				=> $this->input->post('file'),
 				'url'				=> $this->input->post('url'),
 				'remarks'			=> $this->input->post('remarks'),
+				'depo_date'			=> date('Y-m-d',strtotime($this->input->post('depo_date'))),
 				'created_at'		=> date('Y-m-d H:i:s')
 			];
 			$this->db->insert('deposit',$data);
