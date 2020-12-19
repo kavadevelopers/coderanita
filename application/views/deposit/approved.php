@@ -21,7 +21,7 @@
                                 <th class="text-center">#</th>
                                 <th>Bank</th>
                                 <th class="text-right">Amount</th>
-                                <th>Remarks</th>
+                                <th>BTC hash</th>
                                 <th class="text-center">Deposit Type</th>
                                 <th class="text-center">Deposit request Date</th>
                             </tr>
