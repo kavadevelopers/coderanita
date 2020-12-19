@@ -23,6 +23,7 @@ class Api extends CI_Controller
 				'deptype'			=> $this->input->post('deptype'),
 				'file'				=> $this->input->post('file'),
 				'url'				=> $this->input->post('url'),
+				'remarks'			=> $this->input->post('remarks'),
 				'created_at'		=> date('Y-m-d H:i:s')
 			];
 			$this->db->insert('deposit',$data);
