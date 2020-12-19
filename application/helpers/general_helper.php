@@ -98,6 +98,28 @@ function menu($seg,$array)
     }
 }
 
+function newDepo()
+{
+    $ci=& get_instance();
+    return $ci->db->get_where('deposit',['status' => "0"])->num_rows();  
+}
 
+function approvedDepo()
+{
+    $ci=& get_instance();
+    return $ci->db->get_where('deposit',['status' => "1"])->num_rows();  
+}
+
+function rejectedDepo()
+{
+    $ci=& get_instance();
+    return $ci->db->get_where('deposit',['status' => "2"])->num_rows();  
+}
+
+function getDeposit($id)
+{
+    $ci=& get_instance();
+    return $ci->db->get_where('deposit',['id' => $id])->row_array();  
+}
 
 ?>
