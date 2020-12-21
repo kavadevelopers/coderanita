@@ -116,6 +116,24 @@ function rejectedDepo()
     return $ci->db->get_where('deposit',['status' => "2"])->num_rows();  
 }
 
+function newWith()
+{
+    $ci=& get_instance();
+    return $ci->db->get_where('withdraw',['status' => "0"])->num_rows();  
+}
+
+function approvedWith()
+{
+    $ci=& get_instance();
+    return $ci->db->get_where('withdraw',['status' => "1"])->num_rows();  
+}
+
+function rejectedWith()
+{
+    $ci=& get_instance();
+    return $ci->db->get_where('withdraw',['status' => "2"])->num_rows();  
+}
+
 function getDeposit($id)
 {
     $ci=& get_instance();
