@@ -122,4 +122,10 @@ function getDeposit($id)
     return $ci->db->get_where('deposit',['id' => $id])->row_array();  
 }
 
+function getWithdraw($id)
+{
+    $ci=& get_instance();
+    return $ci->db->get_where('withdraw',['id' => $id])->row_array();  
+}
+
 ?>

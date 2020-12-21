@@ -45,6 +45,7 @@ class Api extends CI_Controller
 				'comission'			=> $this->input->post('comission'),
 				'withtype'			=> $this->input->post('withtype'),
 				'url'				=> $this->input->post('url'),
+				'withid'			=> $this->input->post('withid'),
 				'withdate'			=> date('Y-m-d',strtotime($this->input->post('withdate'))),
 				'created_at'		=> date('Y-m-d H:i:s')
 			];
