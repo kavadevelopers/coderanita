@@ -10,7 +10,7 @@ class Api extends CI_Controller
 	public function get_setting()
 	{
 		$setting = get_setting();
-		retJson(['bitwallet' => $setting['bitwallet'],'comission' => $setting['comission']]);
+		retJson(['bitwallet' => $setting['bitwallet'],'comission' => $setting['comission'],'wcomission' => $setting['wcomission']]);
 	}
 
 	public function deposit()

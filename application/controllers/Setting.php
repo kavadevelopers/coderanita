@@ -31,7 +31,8 @@ class Setting extends CI_Controller
 			$data = [
 				'name'							=> $this->input->post('company'),
 				'bitwallet'						=> $this->input->post('bitwallet'),
-				'comission'						=> $this->input->post('comission')
+				'comission'						=> $this->input->post('comission'),
+				'wcomission'					=> $this->input->post('wcomission'),
 			];
 
 			$this->db->where('id','1');

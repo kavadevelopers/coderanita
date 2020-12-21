@@ -31,9 +31,16 @@
                     </div> 
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label>Comission Percentage<span class="-req">*</span></label>
+                            <label>Deposit Comission Percentage<span class="-req">*</span></label>
                             <input name="comission" type="text" class="form-control decimal-num" value="<?= set_value('comission',get_setting()['comission']); ?>" >
                             <?= form_error('comission') ?>
+                        </div>
+                    </div> 
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Withdraw Comission Percentage<span class="-req">*</span></label>
+                            <input name="wcomission" type="text" class="form-control decimal-num" value="<?= set_value('wcomission',get_setting()['wcomission']); ?>" >
+                            <?= form_error('wcomission') ?>
                         </div>
                     </div> 
                 </div>
