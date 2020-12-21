@@ -34,4 +34,23 @@ class Api extends CI_Controller
 			echo retJson(['return' => "Not Allowed"]);
 		}
 	}
+
+	public function withdraw()
+	{
+		if($this->input->post('bank')){
+			$data = [
+				'bank'				=> $this->input->post('bank'),
+				'with_id'			=> $this->input->post('with_id'),
+				'amount'			=> $this->input->post('amount'),
+				'comission'			=> $this->input->post('comission'),
+				'withtype'			=> $this->input->post('withtype'),
+				'url'				=> $this->input->post('url'),
+				'withdate'			=> date('Y-m-d',strtotime($this->input->post('withdate'))),
+				'created_at'		=> date('Y-m-d H:i:s')
+			];
+			$this->db->insert('withdraw',$data);
+		}else{
+			echo retJson(['return' => "Not Allowed"]);
+		}
+	}	
 }
