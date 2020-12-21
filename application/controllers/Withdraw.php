@@ -37,8 +37,8 @@ class Withdraw extends CI_Controller
         $res = curl_exec($ch);
         curl_close($ch);
 
-        $this->db->where('id',$id)->update('deposit',['status' => '1']);
-		$this->session->set_flashdata('msg', 'Deposit Approved');
+        $this->db->where('id',$id)->update('withdraw',['status' => '1']);
+		$this->session->set_flashdata('msg', 'Withdraw Approved');
 		redirect(base_url('withdraw/new'));
 	}
 
