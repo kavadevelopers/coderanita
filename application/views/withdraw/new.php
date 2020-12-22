@@ -22,7 +22,7 @@
                                 <th class="text-center">#</th>
                                 <th>Bank</th>
                                 <th class="text-right">Amount to send</th>
-                                <th class="text-right">Bitcoin Received</th>
+                                <th class="text-right">Bitcoin Expected</th>
                                 <th class="text-center">Withdraw Type</th>
                                 <th class="text-center">Withdraw request Date</th>
                                 <th class="text-center">Action</th>
