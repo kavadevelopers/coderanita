@@ -29,6 +29,9 @@
                         </thead>
                         <tbody>
                             <?php foreach ($list as $key => $value) { ?>
+                                <?php
+                                    $totalBit = ($value['amount'] + (($value['amount'] * $value['comission']) / 100)) * $value['bitrate'];
+                                ?>
                                 <tr>
                                     <td class="text-center">#<?= $value['id'] ?></td>
                                     <td><?= $value['bank'] ?></td>
