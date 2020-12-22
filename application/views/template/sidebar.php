@@ -68,6 +68,14 @@
                     </li>
                 </ul>
                 <ul class="pcoded-item pcoded-left-item">
+                    <li class="<?= menu(1,["withdraw_method"])[0]; ?>">
+                        <a href="<?= base_url('withdraw_method') ?>">
+                            <span class="pcoded-micon"><i class="fa fa-money"></i></span>
+                            <span class="pcoded-mtext">Withdraw methods</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="pcoded-item pcoded-left-item">
                     <li class="<?= menu(1,["setting"])[0]; ?>">
                         <a href="<?= base_url('setting') ?>">
                             <span class="pcoded-micon"><i class="fa fa-gear fa-spin"></i></span>

@@ -13,6 +13,12 @@ class Api extends CI_Controller
 		retJson(['bitwallet' => $setting['bitwallet'],'comission' => $setting['comission'],'wcomission' => $setting['wcomission']]);
 	}
 
+	public function get_withdraw_methods()
+	{
+		$result = $this->db->get_where('withdraw_method',['status' => '1'])->result_array();
+		retJson($result);	
+	}
+
 	public function deposit()
 	{
 		if($this->input->post('bank')){
