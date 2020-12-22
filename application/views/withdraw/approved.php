@@ -21,8 +21,8 @@
                             <tr>
                                 <th class="text-center">#</th>
                                 <th>Bank</th>
-                                <th class="text-right">Amount</th>
-                                <th class="text-right">Comission</th>
+                                <th class="text-right">Amount to send</th>
+                                <th class="text-right">Bitcoin Received</th>
                                 <th class="text-center">Withdraw Type</th>
                                 <th class="text-center">Withdraw request Date</th>
                             </tr>
@@ -33,7 +33,7 @@
                                     <td class="text-center">#<?= $value['id'] ?></td>
                                     <td><?= $value['bank'] ?></td>
                                     <td class="text-right">USD <?= $value['amount'] ?></td>
-                                    <td class="text-right">USD <?= $value['comission'] ?></td>
+                                    <td class="text-right"><?= number_format((float)$totalBit, 6, '.', '') ?></td>
                                     <td class="text-center"><?= $value['withtype'] ?><br><b><?= $value['withid'] ?></b></td>
                                     <td class="text-center"><?= vd($value['withdate']) ?></td>
                                 </tr>
