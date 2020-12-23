@@ -22,6 +22,7 @@
                                 <th class="text-center">#</th>
                                 <th>Bank</th>
                                 <th class="text-right">Amount to send</th>
+                                <th class="text-right">Comission</th>
                                 <th class="text-right">Bitcoin Expected</th>
                                 <th class="text-center">Withdraw Type</th>
                                 <th class="text-center">Withdraw request Date</th>
@@ -31,11 +32,13 @@
                             <?php foreach ($list as $key => $value) { ?>
                                 <?php
                                     $totalBit = ($value['amount'] + (($value['amount'] * $value['comission']) / 100)) * $value['bitrate'];
+                                    $totalComission = (($value['amount'] * $value['comission']) / 100) * $value['bitrate'];
                                 ?>
                                 <tr>
                                     <td class="text-center">#<?= $value['id'] ?></td>
                                     <td><?= $value['bank'] ?></td>
                                     <td class="text-right">USD <?= $value['amount'] ?></td>
+                                    <td class="text-right"><?= $totalComission ?> BTC</td>
                                     <td class="text-right"><?= number_format((float)$totalBit, 6, '.', '') ?></td>
                                     <td class="text-center"><?= $value['withtype'] ?><br><b><?= $value['withid'] ?></b></td>
                                     <td class="text-center"><?= vd($value['withdate']) ?></td>
