@@ -32,7 +32,7 @@ class Withdraw extends CI_Controller
 	{
 		$deposit = getWithdraw($id);
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL,$deposit['url']."/user-withdrawal-approve-code/".$deposit['with_id']);
+        curl_setopt($ch, CURLOPT_URL,$deposit['url']."/user-withdrawal-approve-code/".$deposit['with_id'].'/'.$deposit['amount']);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $res = curl_exec($ch);
         curl_close($ch);
@@ -53,6 +53,13 @@ class Withdraw extends CI_Controller
 
 		$this->db->where('id',$id)->update('withdraw',['status' => '2']);
 		$this->session->set_flashdata('msg', 'Withdraw Rejected');
+		redirect(base_url('withdraw/new'));
+	}
+
+	public function update()
+	{
+		$this->db->where('id',$this->input->post('id'))->update('withdraw',['amount' => $this->input->post('amount')]);
+		$this->session->set_flashdata('msg', 'Amount Changed');
 		redirect(base_url('withdraw/new'));
 	}
 }

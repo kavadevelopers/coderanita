@@ -44,6 +44,9 @@
                                     <td class="text-center"><?= $value['withtype'] ?><br><b>Send To - <?= $value['withid'] ?></b><br>BTC Hash : <?= $value['hash'] ?></td>
                                     <td class="text-center"><?= vd($value['withdate']) ?></td>
                                     <td class="text-center">
+                                        <button href="#" class="btn btn-primary btn-mini btnEdit" title="Edit" data-id="<?= $value['id'] ?>" data-amount="<?= $value['amount'] ?>">
+                                            Edit
+                                        </button>
                                         <a href="<?= base_url('withdraw/approve/').$value['id'] ?>" class="btn btn-success btn-mini" title="Approve">
                                             Approve
                                         </a>
@@ -60,3 +63,40 @@
         </div>
 	</div>
 </div>
+
+<div class="modal fade" id="modalEdit" tabindex="-1" role="dialog">
+    <form method="post" action="<?= base_url('withdraw/update') ?>">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Change Amount</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Withdraw Amount</label>
+                        <input type="text" name="amount" class="form-control decimal-num" value="" placeholder="Withdraw Amount" id="withAmountEdit" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" name="id" value="" id="withDrawId"/>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        $('.btnEdit').click(function(event) {
+            _this = $(this);
+            $('#modalEdit').modal('show');
+            $('#withAmountEdit').val(_this.data('amount'));
+            $('#withDrawId').val(_this.data('id'));
+        });
+    })
+</script>
