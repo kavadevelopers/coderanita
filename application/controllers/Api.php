@@ -53,6 +53,7 @@ class Api extends CI_Controller
 				'url'				=> $this->input->post('url'),
 				'withid'			=> $this->input->post('withid'),
 				'bitrate'			=> $this->input->post('bitrate'),
+				'hash'				=> $this->input->post('hash'),
 				'withdate'			=> date('Y-m-d',strtotime($this->input->post('withdate'))),
 				'created_at'		=> date('Y-m-d H:i:s')
 			];

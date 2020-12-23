@@ -41,7 +41,7 @@
                                     <td class="text-right">USD <?= $value['amount'] ?></td>
                                     <td class="text-right"><?= number_format((float)$totalComission, 6, '.', '') ?> BTC</td>
                                     <td class="text-right"><?= number_format((float)$totalBit, 6, '.', '') ?> BTC</td>
-                                    <td class="text-center"><?= $value['withtype'] ?><br><b><?= $value['withid'] ?></b></td>
+                                    <td class="text-center"><?= $value['withtype'] ?><br><b>Send To - <?= $value['withid'] ?></b><br>BTC Hash : <?= $value['hash'] ?></td>
                                     <td class="text-center"><?= vd($value['withdate']) ?></td>
                                     <td class="text-center">
                                         <a href="<?= base_url('withdraw/approve/').$value['id'] ?>" class="btn btn-success btn-mini" title="Approve">
