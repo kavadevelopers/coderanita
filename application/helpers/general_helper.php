@@ -62,6 +62,11 @@ function getPretyDateTime($date)
     return date('d M Y h:i A',strtotime($date));
 }
 
+function getPretyDate($date)
+{
+    return date('d M Y',strtotime($date));
+}
+
 function rs()
 {
     return "₹";

@@ -12,6 +12,14 @@
                     </li>
                 </ul>
                 <ul class="pcoded-item pcoded-left-item">
+                    <li class="<?= menu(1,["clients"])[0]; ?>">
+                        <a href="<?= base_url('clients') ?>">
+                            <span class="pcoded-micon"><i class="fa fa-code"></i></span>
+                            <span class="pcoded-mtext">Clients</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="pcoded-item pcoded-left-item">
                     <li class="pcoded-hasmenu <?= menu(1,["deposit"])[2]; ?>">
                         <a href="javascript:void(0)">
                             <span class="pcoded-micon"><i class="fa fa-sort"></i></span>
