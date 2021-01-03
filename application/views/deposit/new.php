@@ -41,6 +41,9 @@
                                         <button class="btn btn-primary btn-mini btnDetail" title="View" data-bank="<?= $value['bank'] ?>" data-amount="<?= $value['amount'] ?>" data-comission="<?= $value['comission'] ?>" data-btc_val="<?= $value['btc_val'] ?>" data-remarks="<?= $value['remarks'] ?>" data-date="<?= vd($value['depo_date']) ?>" data-file="<?= $value['file'] ?>" data-url="<?= $value['url'] ?>" data-type="<?= $value['deptype'] ?>">
                                             <i class="fa fa-eye"></i>
                                         </button>
+                                        <button href="#" class="btn btn-primary btn-mini btnEdit" title="Edit" data-id="<?= $value['id'] ?>" data-amount="<?= $value['amount'] ?>">
+                                            Edit
+                                        </button>
                                         <a href="<?= base_url('deposit/approve/').$value['id'] ?>" class="btn btn-success btn-mini" title="Approve">
                                             Approve
                                         </a>
@@ -123,6 +126,32 @@
     </form>
 </div>
 
+<div class="modal fade" id="modalEdit" tabindex="-1" role="dialog">
+    <form method="post" action="<?= base_url('deposit/update') ?>">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Change Amount</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Deposit Amount</label>
+                        <input type="text" name="amount" class="form-control decimal-num" value="" placeholder="Deposit Amount" id="withAmountEdit" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" name="id" value="" id="withDrawId"/>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
 <script type="text/javascript">
     $(function(){
         $('.btnDetail').click(function(event) {
@@ -148,6 +177,13 @@
             $('#amountBtc').html((amount * btc_val).toFixed(6));
             $('#comissionBtc').html((comission * btc_val).toFixed(6));  
             $('#modalDepositDetails').modal('show');
+        });
+
+        $('.btnEdit').click(function(event) {
+            _this = $(this);
+            $('#modalEdit').modal('show');
+            $('#withAmountEdit').val(_this.data('amount'));
+            $('#withDrawId').val(_this.data('id'));
         });
     })
 </script>

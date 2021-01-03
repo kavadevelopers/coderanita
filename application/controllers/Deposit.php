@@ -58,6 +58,22 @@ class Deposit extends CI_Controller
 	}
 
 
+	public function update()
+	{
+		$this->db->where('id',$this->input->post('id'))->update('deposit',['amount' => $this->input->post('amount')]);
+
+		$deposit = getDeposit($this->input->post('id'));
+		$ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL,$withdraw['url']."/user-deposit-update-code/".$deposit['deposit_id'].'/'.$deposit['amount']);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $res = curl_exec($ch);
+        curl_close($ch);
+
+		$this->session->set_flashdata('msg', 'Amount Changed');
+		redirect(base_url('deposit/new'));
+	}
+
+
 	public function checkPost($id)
 	{
 		$deposit = getDeposit($id);
