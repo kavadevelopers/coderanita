@@ -151,4 +151,9 @@ function getWithdraw($id)
     return $ci->db->get_where('withdraw',['id' => $id])->row_array();  
 }
 
+function pretyAmount($amount)
+{
+    return number_format($amount,2);
+}
+
 ?>

@@ -31,7 +31,7 @@
                                 <tr>
                                     <td class="text-center">#<?= $value['id'] ?></td>
                                     <td><?= $value['bank'] ?></td>
-                                    <td class="text-right">USD <?= $value['amount'] ?></td>
+                                    <td class="text-right">USD <?= pretyAmount($value['amount']) ?></td>
                                     <td><?= $value['remarks'] ?></td>
                                     <td class="text-center"><?= $value['deptype'] ?></td>
                                     <td class="text-center"><?= vd($value['depo_date']) ?></td>

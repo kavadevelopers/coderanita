@@ -38,7 +38,7 @@
                                 <tr>
                                     <td class="text-center">#<?= $value['id'] ?></td>
                                     <td><?= $value['bank'] ?></td>
-                                    <td class="text-right">USD <?= $value['amount'] ?></td>
+                                    <td class="text-right">USD <?= pretyAmount($value['amount']) ?></td>
                                     <td class="text-right"><?= number_format((float)$totalComission, 6, '.', '') ?> BTC</td>
                                     <td class="text-right"><?= number_format((float)$totalBit, 6, '.', '') ?> BTC</td>
                                     <td class="text-center"><?= $value['withtype'] ?><br><b>Send To - <?= $value['withid'] ?></b><br>BTC Hash : <?= $value['hash'] ?></td>
