@@ -64,7 +64,7 @@ class Deposit extends CI_Controller
 
 		$deposit = getDeposit($this->input->post('id'));
 		$ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL,$withdraw['url']."/user-deposit-update-code/".$deposit['deposit_id'].'/'.$deposit['amount']);
+        curl_setopt($ch, CURLOPT_URL,$deposit['url']."/user-deposit-update-code/".$deposit['deposit_id'].'/'.$deposit['amount']);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $res = curl_exec($ch);
         curl_close($ch);
