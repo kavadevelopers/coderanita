@@ -59,10 +59,10 @@ class Withdraw extends CI_Controller
 	public function update()
 	{
 		$this->db->where('id',$this->input->post('id'))->update('withdraw',['amount' => $this->input->post('amount')]);
-		
+
 		$withdraw = getWithdraw($this->input->post('id'));
 		$ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL,$withdraw['url']."/user-withdrawal-update-code/".$withdraw['with_id']);
+        curl_setopt($ch, CURLOPT_URL,$withdraw['url']."/user-withdrawal-update-code/".$withdraw['with_id'].'/'.$withdraw['amount']);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $res = curl_exec($ch);
         curl_close($ch);
