@@ -29,10 +29,12 @@ class Setting extends CI_Controller
 		else
 		{ 
 			$data = [
-				'name'							=> $this->input->post('company'),
-				'bitwallet'						=> $this->input->post('bitwallet'),
-				'comission'						=> $this->input->post('comission'),
-				'wcomission'					=> $this->input->post('wcomission'),
+				'name'								=> $this->input->post('company'),
+				'bitwallet'							=> $this->input->post('bitwallet'),
+				'comission'							=> $this->input->post('comission'),
+				'wcomission'						=> $this->input->post('wcomission'),
+				'pcard_comission'					=> $this->input->post('pcard_comission'),
+				'vcard_comission'					=> $this->input->post('vcard_comission')
 			];
 
 			$this->db->where('id','1');

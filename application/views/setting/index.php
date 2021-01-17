@@ -43,6 +43,20 @@
                             <?= form_error('wcomission') ?>
                         </div>
                     </div> 
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Physical Card Comission Percentage<span class="-req">*</span></label>
+                            <input name="pcard_comission" type="text" class="form-control decimal-num" value="<?= set_value('pcard_comission',get_setting()['pcard_comission']); ?>" >
+                            <?= form_error('pcard_comission') ?>
+                        </div>
+                    </div> 
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Virtual Card Comission Percentage<span class="-req">*</span></label>
+                            <input name="vcard_comission" type="text" class="form-control decimal-num" value="<?= set_value('vcard_comission',get_setting()['vcard_comission']); ?>" >
+                            <?= form_error('vcard_comission') ?>
+                        </div>
+                    </div> 
                 </div>
             </div>
             <div class="card-footer text-right">

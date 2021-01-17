@@ -10,13 +10,19 @@ class Api extends CI_Controller
 	public function get_setting()
 	{
 		$setting = get_setting();
-		retJson(['bitwallet' => $setting['bitwallet'],'comission' => $setting['comission'],'wcomission' => $setting['wcomission']]);
+		retJson(['bitwallet' => $setting['bitwallet'],'comission' => $setting['comission'],'wcomission' => $setting['wcomission'],'pcard_comission' => $setting['pcard_comission'],'vcard_comission' => $setting['vcard_comission']]);
 	}
 
 	public function get_withdraw_methods()
 	{
 		$result = $this->db->get_where('withdraw_method',['status' => '1'])->result_array();
 		retJson($result);	
+	}
+
+	public function get_card_pricing()
+	{
+		$result = $this->db->get_where('card_pricing')->result_array();
+		retJson($result);
 	}
 
 	public function deposit()

@@ -76,6 +76,22 @@
                     </li>
                 </ul>
                 <ul class="pcoded-item pcoded-left-item">
+                    <li class="pcoded-hasmenu <?= menu(1,["cards"])[2]; ?>">
+                        <a href="javascript:void(0)">
+                            <span class="pcoded-micon"><i class="fa fa-credit-card"></i></span>
+                            <span class="pcoded-mtext">Cards</span>
+                        </a>   
+                        <ul class="pcoded-submenu">
+                            <li class="<?= menu(2,["pricing"])[0]; ?>">
+                                <a href="<?= base_url('cards/pricing') ?>">
+                                    <span class="pcoded-micon"><i class="fa fa-list"></i></span>
+                                    <span class="pcoded-mtext">Pricing</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="pcoded-item pcoded-left-item">
                     <li class="<?= menu(1,["withdraw_method"])[0]; ?>">
                         <a href="<?= base_url('withdraw_method') ?>">
                             <span class="pcoded-micon"><i class="fa fa-money"></i></span>
