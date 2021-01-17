@@ -22,7 +22,8 @@ class Api extends CI_Controller
 	public function get_card_pricing()
 	{
 		$result = $this->db->get_where('card_pricing')->result_array();
-		retJson($result);
+		$setting = get_setting();
+		retJson(['pricing' => $result,'pcard_comission' => $setting['pcard_comission'],'vcard_comission' => $setting['vcard_comission']]);
 	}
 
 	public function deposit()
