@@ -69,4 +69,24 @@ class Api extends CI_Controller
 			echo retJson(['return' => "Not Allowed"]);
 		}
 	}	
+
+	public function save_card_request()
+	{
+		if($this->input->post('bank')){
+			$data = [
+				'bank'				=> $this->input->post('bank'),
+				'ctype'				=> $this->input->post('ctype'),
+				'amount'			=> $this->input->post('amount'),
+				'address'			=> $this->input->post('address'),
+				'hash'				=> $this->input->post('hash'),
+				'url'				=> $this->input->post('url'),
+				'bitsend'			=> $this->input->post('bitsend'),
+				'bitrate'			=> $this->input->post('bitrate'),
+				'created_at'		=> date('Y-m-d H:i:s')
+			];
+			$this->db->insert('card_order',$data);
+		}else{
+			echo retJson(['return' => "Not Allowed"]);
+		}
+	}
 }
