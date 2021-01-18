@@ -104,6 +104,28 @@
                     </li>
                 </ul>
                 <ul class="pcoded-item pcoded-left-item">
+                    <li class="pcoded-hasmenu <?= menu(1,["modification_req"])[2]; ?>">
+                        <a href="javascript:void(0)">
+                            <span class="pcoded-micon"><i class="fa fa-refresh"></i></span>
+                            <span class="pcoded-mtext">Modification Request</span>
+                        </a>   
+                        <ul class="pcoded-submenu">
+                            <li class="<?= menu(2,["active"])[0]; ?>">
+                                <a href="<?= base_url('modification_req/active') ?>">
+                                    <span class="pcoded-micon"><i class="fa fa-list"></i></span>
+                                    <span class="pcoded-mtext">Active</span>
+                                </a>
+                            </li>
+                            <li class="<?= menu(2,["old"])[0]; ?>">
+                                <a href="<?= base_url('modification_req/old') ?>">
+                                    <span class="pcoded-micon"><i class="fa fa-list"></i></span>
+                                    <span class="pcoded-mtext">Old</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="pcoded-item pcoded-left-item">
                     <li class="<?= menu(1,["withdraw_method"])[0]; ?>">
                         <a href="<?= base_url('withdraw_method') ?>">
                             <span class="pcoded-micon"><i class="fa fa-money"></i></span>
