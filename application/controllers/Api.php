@@ -23,7 +23,7 @@ class Api extends CI_Controller
 	{
 		$result = $this->db->get_where('card_pricing')->result_array();
 		$setting = get_setting();
-		retJson(['pricing' => $result,'pcard_comission' => $setting['pcard_comission'],'vcard_comission' => $setting['vcard_comission'],'pcard_fees' => $setting['pcard_fees'],'vcard_fees' => $setting['vcard_fees']]);
+		retJson(['pricing' => $result,'pcard_comission' => $setting['pcard_comission'],'vcard_comission' => $setting['vcard_comission'],'pcard_fees' => $setting['pcard_fees'],'vcard_fees' => $setting['vcard_fees'],'bitwallet' => $setting['bitwallet']]);
 	}
 
 	public function deposit()
