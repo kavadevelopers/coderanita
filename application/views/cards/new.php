@@ -45,6 +45,9 @@
                                         <a href="<?= base_url('cards/approve/').$value['id'] ?>" class="btn btn-success btn-mini" onclick="return confirm('Are you sure?')" title="Done">
                                             Done
                                         </a>
+                                        <a href="<?= base_url('cards/delete/').$value['id'] ?>/new" class="btn btn-danger btn-mini" onclick="return confirm('Are you sure?')" title="Delete">
+                                            Delete
+                                        </a>
                                     </td>
                                 </tr>
                             <?php } ?>

@@ -36,6 +36,17 @@ class Cards extends CI_Controller
 		redirect(base_url('cards/new'));
 	}
 
+	public function delete($id,$type)
+	{
+		$this->db->where('id',$id)->delete('card_order');
+		$this->session->set_flashdata('msg', 'Request Deleted');
+		if($type == "new"){
+			redirect(base_url('cards/new'));
+		}else{
+			redirect(base_url('cards/approved'));
+		}
+	}
+
 	public function edit_pricing($id)
 	{
 		$data['_title']		= "Card Pricing Edit";
