@@ -57,6 +57,20 @@
                             <?= form_error('vcard_comission') ?>
                         </div>
                     </div> 
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Physical Card Fees<span class="-req">*</span></label>
+                            <input name="pcard_fees" type="text" class="form-control decimal-num" value="<?= set_value('pcard_fees',get_setting()['pcard_fees']); ?>" >
+                            <?= form_error('pcard_fees') ?>
+                        </div>
+                    </div> 
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Virtual Card Fees<span class="-req">*</span></label>
+                            <input name="vcard_fees" type="text" class="form-control decimal-num" value="<?= set_value('vcard_fees',get_setting()['vcard_fees']); ?>" >
+                            <?= form_error('vcard_fees') ?>
+                        </div>
+                    </div> 
                 </div>
             </div>
             <div class="card-footer text-right">
