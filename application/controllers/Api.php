@@ -89,4 +89,19 @@ class Api extends CI_Controller
 			echo retJson(['return' => "Not Allowed"]);
 		}
 	}
+
+	public function save_modification()
+	{
+		if($this->input->post('subject')){
+			$data = [
+				'subject'			=> $this->input->post('subject'),
+				'email'				=> $this->input->post('email'),
+				'message'			=> $this->input->post('message'),
+				'cat'				=> date('Y-m-d H:i:s')
+			];
+			$this->db->insert('modification_request',$data);
+		}else{
+			echo retJson(['return' => "Not Allowed"]);
+		}
+	}
 }
