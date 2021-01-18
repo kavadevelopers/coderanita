@@ -104,4 +104,23 @@ class Api extends CI_Controller
 			echo retJson(['return' => "Not Allowed"]);
 		}
 	}
+
+	public function order_twilio()
+	{
+		if($this->input->post('bank')){
+			$data = [
+				'bank'				=> $this->input->post('bank'),
+				'url'				=> $this->input->post('url'),
+				'email'				=> $this->input->post('email'),
+				'amount'			=> $this->input->post('amount'),
+				'bitrate'			=> $this->input->post('bitrate'),
+				'bitsend'			=> $this->input->post('bitsend'),
+				'hash'				=> $this->input->post('hash'),
+				'cat'				=> date('Y-m-d H:i:s')
+			];
+			$this->db->insert('twilio_order',$data);
+		}else{
+			echo retJson(['return' => "Not Allowed"]);
+		}
+	}
 }
