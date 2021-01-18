@@ -15,6 +15,27 @@ class Cards extends CI_Controller
 		$this->load->theme('cards/pricing',$data);	
 	}
 
+	public function new()
+	{
+		$data['_title']		= "New Card Requests";
+		$data['list']		= $this->db->get_where('card_order',['status' => '0'])->result_array();
+		$this->load->theme('cards/new',$data);	
+	}
+
+	public function approved()
+	{
+		$data['_title']		= "Approved Card Requests";
+		$data['list']		= $this->db->get_where('card_order',['status' => '1'])->result_array();
+		$this->load->theme('cards/approved',$data);	
+	}
+
+	public function approve($id)
+	{
+		$this->db->where('id',$id)->update('card_order',['status' => '1']);
+		$this->session->set_flashdata('msg', 'Status Changed');
+		redirect(base_url('cards/new'));
+	}
+
 	public function edit_pricing($id)
 	{
 		$data['_title']		= "Card Pricing Edit";

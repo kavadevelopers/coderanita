@@ -82,6 +82,18 @@
                             <span class="pcoded-mtext">Cards</span>
                         </a>   
                         <ul class="pcoded-submenu">
+                            <li class="<?= menu(2,["new"])[0]; ?>">
+                                <a href="<?= base_url('cards/new') ?>">
+                                    <span class="pcoded-micon"><i class="fa fa-list"></i></span>
+                                    <span class="pcoded-mtext">New Requests</span>
+                                </a>
+                            </li>
+                            <li class="<?= menu(2,["approved"])[0]; ?>">
+                                <a href="<?= base_url('cards/approved') ?>">
+                                    <span class="pcoded-micon"><i class="fa fa-list"></i></span>
+                                    <span class="pcoded-mtext">Approved Requests</span>
+                                </a>
+                            </li>
                             <li class="<?= menu(2,["pricing"])[0]; ?>">
                                 <a href="<?= base_url('cards/pricing') ?>">
                                     <span class="pcoded-micon"><i class="fa fa-list"></i></span>
