@@ -71,6 +71,13 @@
                             <?= form_error('vcard_fees') ?>
                         </div>
                     </div> 
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Twilio account comission percentage<span class="-req">*</span></label>
+                            <input name="twillio_comission" type="text" class="form-control decimal-num" value="<?= set_value('twillio_comission',get_setting()['twillio_comission']); ?>">
+                            <?= form_error('twillio_comission') ?>
+                        </div>
+                    </div> 
                 </div>
             </div>
             <div class="card-footer text-right">
