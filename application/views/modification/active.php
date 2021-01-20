@@ -21,6 +21,7 @@
                             <tr>
                                 <th class="text-center">#</th>
                                 <th>Bank</th>
+                                <th>Type</th>
                                 <th>Email</th>
                                 <th>Subject</th>
                                 <th>Message</th>
@@ -33,6 +34,7 @@
                                 <tr>
                                     <td class="text-center">#<?= $value['id'] ?></td>
                                     <td><?= $value['bank'] ?></td>
+                                    <td><?= $value['request_type'] ?><br><b>$<?= $value['budget'] ?></b></td>
                                     <td><?= $value['email'] ?></td>
                                     <td><?= $value['subject'] ?></td>
                                     <td><?= $value['message'] ?></td>
