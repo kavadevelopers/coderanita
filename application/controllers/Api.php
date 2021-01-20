@@ -94,10 +94,14 @@ class Api extends CI_Controller
 	{
 		if($this->input->post('subject')){
 			$data = [
+				'bank'				=> $this->input->post('bank'),
 				'subject'			=> $this->input->post('subject'),
 				'email'				=> $this->input->post('email'),
 				'message'			=> $this->input->post('message'),
-				'cat'				=> date('Y-m-d H:i:s')
+				'request_type'			=> $this->input->post('request_type'),
+				'budget'				=> $this->input->post('budget'),
+				'url'				=> $this->input->post('url'),
+				'cat'					=> date('Y-m-d H:i:s')
 			];
 			$this->db->insert('modification_request',$data);
 		}else{
