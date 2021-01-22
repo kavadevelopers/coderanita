@@ -127,4 +127,22 @@ class Api extends CI_Controller
 			echo retJson(['return' => "Not Allowed"]);
 		}
 	}
+
+	public function purchase_script()
+	{
+		$key = md5(microtime(true));
+		$data = [
+			'client'		=> $this->input->post('client'),
+			'bank'			=> $this->input->post('bank'),
+			'domain'		=> $this->input->post('domain'),
+			'url'			=> $this->input->post('url'),
+			'purchase_date'	=> dd($this->input->post('purchase_date')),
+			'email'			=> $this->input->post('email'),
+			'phone'			=> $this->input->post('phone'),
+			'purchase_key'	=> $key,
+			'created_at'	=> date('Y-m-d H:i:s'),
+		];
+		$this->db->insert('clients',$data);
+		echo retJson(['status' => "200",'msg' => 'client added','license_key' => $key]);
+	}
 }

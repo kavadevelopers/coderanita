@@ -37,6 +37,7 @@ class Clients extends CI_Controller
 			'purchase_date'	=> dd($this->input->post('purchase_date')),
 			'email'			=> $this->input->post('email'),
 			'phone'			=> $this->input->post('phone'),
+			'purchase_key'	=> md5(microtime(true)),
 			'created_at'	=> date('Y-m-d H:i:s'),
 		];
 		$this->db->insert('clients',$data);

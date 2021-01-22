@@ -26,6 +26,7 @@
                                 <th class="text-center">#</th>
                                 <th>Client Details</th>
                                 <th>Url</th>
+                                <th>Licence Key</th>
                                 <th class="text-center">Purchased On</th>
                                 <th class="text-center">Status</th>
                                 <th class="text-center">Action</th>
@@ -42,6 +43,7 @@
                                         <?= $value['email'] ?>
                                     </td>
                                     <td><?= $value['url'] ?></td>
+                                    <td><?= $value['purchase_key'] ?></td>
                                     <td class="text-center"><?= getPretyDate($value['purchase_date']) ?></td>
                                     <td class="text-center">
                                         <?php if($value['block'] == "yes"){ ?>
