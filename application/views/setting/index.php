@@ -45,6 +45,13 @@
                     </div> 
                     <div class="col-md-4">
                         <div class="form-group">
+                            <label>Payment and Collection Comission Percentage<span class="-req">*</span></label>
+                            <input name="pccomission" type="text" class="form-control decimal-num" value="<?= set_value('pccomission',get_setting()['pccomission']); ?>" >
+                            <?= form_error('pccomission') ?>
+                        </div>
+                    </div> 
+                    <div class="col-md-4">
+                        <div class="form-group">
                             <label>Physical Card Comission Percentage<span class="-req">*</span></label>
                             <input name="pcard_comission" type="text" class="form-control decimal-num" value="<?= set_value('pcard_comission',get_setting()['pcard_comission']); ?>" >
                             <?= form_error('pcard_comission') ?>

@@ -20,6 +20,8 @@ class Setting extends CI_Controller
 		$this->form_validation->set_rules('company', 'Company Name','trim|required');
 		$this->form_validation->set_rules('bitwallet', 'Bitcoin Wallet Id','trim|required');
 		$this->form_validation->set_rules('comission', 'Comission Percentage','trim|required');
+		$this->form_validation->set_rules('wcomission', 'Withdraw Comission Percentage','trim|required');
+		$this->form_validation->set_rules('pccomission', 'Payment and Collection Comission Percentage','trim|required');
 		$this->form_validation->set_rules('pcard_comission', 'Physical Card Comission Percentage','trim|required');
 		$this->form_validation->set_rules('vcard_comission', 'Virtual Card Comission Percentage','trim|required');
 		$this->form_validation->set_rules('pcard_fees', 'Virtual Card Fees','trim|required');
@@ -38,6 +40,7 @@ class Setting extends CI_Controller
 				'bitwallet'							=> $this->input->post('bitwallet'),
 				'comission'							=> $this->input->post('comission'),
 				'wcomission'						=> $this->input->post('wcomission'),
+				'pccomission'						=> $this->input->post('pccomission'),
 				'pcard_comission'					=> $this->input->post('pcard_comission'),
 				'vcard_comission'					=> $this->input->post('vcard_comission'),
 				'pcard_fees'						=> $this->input->post('pcard_fees'),
