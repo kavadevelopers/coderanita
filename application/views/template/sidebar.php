@@ -76,6 +76,34 @@
                     </li>
                 </ul>
                 <ul class="pcoded-item pcoded-left-item">
+                    <li class="pcoded-hasmenu <?= menu(1,["invoice_pay"])[2]; ?>">
+                        <a href="javascript:void(0)">
+                            <span class="pcoded-micon"><i class="fa fa-file"></i></span>
+                            <span class="pcoded-mtext">Invoice Payments</span>
+                        </a>   
+                        <ul class="pcoded-submenu">
+                            <li class="<?= menu(2,["new"])[0]; ?>">
+                                <a href="<?= base_url('invoice_pay/new') ?>">
+                                    <span class="pcoded-micon"><i class="fa fa-list"></i></span>
+                                    <span class="pcoded-mtext">New</span>
+                                </a>
+                            </li>
+                            <li class="<?= menu(2,["approved"])[0]; ?>">
+                                <a href="<?= base_url('invoice_pay/approved') ?>">
+                                    <span class="pcoded-micon"><i class="fa fa-list"></i></span>
+                                    <span class="pcoded-mtext">Approved</span>
+                                </a>
+                            </li>
+                            <li class="<?= menu(2,["rejected"])[0]; ?>">
+                                <a href="<?= base_url('invoice_pay/rejected') ?>">
+                                    <span class="pcoded-micon"><i class="fa fa-list"></i></span>
+                                    <span class="pcoded-mtext">Rejected</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="pcoded-item pcoded-left-item">
                     <li class="pcoded-hasmenu <?= menu(1,["cards"])[2]; ?>">
                         <a href="javascript:void(0)">
                             <span class="pcoded-micon"><i class="fa fa-credit-card"></i></span>
