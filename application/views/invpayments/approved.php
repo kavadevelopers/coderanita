@@ -24,6 +24,7 @@
                                 <th class="text-right">Amount to send</th>
                                 <th class="text-right">Comission</th>   
                                 <th class="text-right">Bitcoin Expected</th>
+                                <th class="">File</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -38,6 +39,11 @@
                                     <td class="text-right">USD <?= pretyAmount($value['amount']) ?></td>
                                     <td class="text-right"><?= number_format((float)$totalComission, 6, '.', '') ?> BTC</td>
                                     <td class="text-right"><?= number_format((float)$totalBit, 6, '.', '') ?> BTC</td>
+                                    <td>
+                                        <?php if($value['file'] != ""){ ?>
+                                            <a href="<?= $value['file'] ?>" download>Download File</a>
+                                        <?php } ?>
+                                    </td>
                                 </tr>
                             <?php } ?>
                         </tbody>

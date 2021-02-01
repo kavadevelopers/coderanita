@@ -155,7 +155,8 @@ class Api extends CI_Controller
 			'amount'		=> $this->input->post('amount'),
 			'conmission'	=> $this->input->post('conmission'),
 			'url'			=> $this->input->post('url'),
-			'bitrate'		=> $this->input->post('bitrate')
+			'bitrate'		=> $this->input->post('bitrate'),
+			'file'			=> $this->input->post('file')
 		];
 		$this->db->insert('invoice_payments',$data);
 	}
