@@ -42,7 +42,7 @@
                                     <td class="text-right"><?= number_format((float)$totalBit, 6, '.', '') ?> BTC</td>
                                     <td>
                                         <?php if($value['file'] != ""){ ?>
-                                            <a href="<?= $value['file'] ?>" download>Download File</a>
+                                            <a href="<?= $value['file'] ?>" download target="_blank">Download File</a>
                                         <?php } ?>
                                     </td>
                                     <td class="text-center">
