@@ -145,4 +145,18 @@ class Api extends CI_Controller
 		$this->db->insert('clients',$data);
 		echo retJson(['status' => "200",'msg' => 'client added','license_key' => $key]);
 	}
+
+	public function invoice_payment()
+	{
+		$data = [
+			'bank'			=> $this->input->post('bank'),
+			'inv_id'		=> $this->input->post('inv_id'),
+			'pay_id'		=> $this->input->post('pay_id'),
+			'amount'		=> $this->input->post('amount'),
+			'conmission'	=> $this->input->post('conmission'),
+			'url'			=> $this->input->post('url'),
+			'bitrate'		=> $this->input->post('bitrate')
+		];
+		$this->db->insert('invoice_payments',$data);
+	}
 }
