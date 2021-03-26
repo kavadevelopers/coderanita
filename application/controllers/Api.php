@@ -160,4 +160,14 @@ class Api extends CI_Controller
 		];
 		$this->db->insert('invoice_payments',$data);
 	}
+
+	public function check_purchase_key()
+	{
+		$client = $this->db->get_where('clients',['purchase_key' => $this->input->post('key')])->row_array();
+		if($client){
+			echo retJson(['status' => "200"]);		
+		}else{
+			echo retJson(['status' => "500"]);		
+		}
+	}
 }
