@@ -163,7 +163,7 @@ class Api extends CI_Controller
 
 	public function check_purchase_key()
 	{
-		$client = $this->db->get_where('clients',['purchase_key' => $this->input->post('key')])->row_array();
+		$client = $this->db->get_where('clients',['purchase_key' => trim($this->input->post('key'))])->row_array();
 		if($client){
 			echo retJson(['status' => "200"]);		
 		}else{
@@ -173,7 +173,7 @@ class Api extends CI_Controller
 
 	public function check_purchase_key_with_domain()
 	{
-		$client = $this->db->get_where('clients',['purchase_key' => $this->input->post('key'),'domain' => $this->input->post('domain')])->row_array();
+		$client = $this->db->get_where('clients',['purchase_key' => trim($this->input->post('key')),'domain' => trim($this->input->post('domain')),'block' => ''])->row_array();
 		if($client){
 			echo retJson(['status' => "200"]);		
 		}else{
