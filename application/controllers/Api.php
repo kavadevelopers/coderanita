@@ -170,4 +170,14 @@ class Api extends CI_Controller
 			echo retJson(['status' => "500"]);		
 		}
 	}
+
+	public function check_purchase_key_with_domain()
+	{
+		$client = $this->db->get_where('clients',['purchase_key' => $this->input->post('key'),'domain' => $this->input->post('domain')])->row_array();
+		if($client){
+			echo retJson(['status' => "200"]);		
+		}else{
+			echo retJson(['status' => "500"]);		
+		}
+	}
 }
